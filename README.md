@@ -11,7 +11,7 @@ Creator of AI Rehman, a clothing brand that merges traditional craftsmanship wit
 🔹 *Want to improve this project?* Contributions are welcome!  
 
 1. *Fork the repository*  
-2. *Create a new branch* (feature-new-cipher)  
+2. *Create a new branch* (feature-new-enhancment)  
 3. *Make your changes & commit*  
 4. *Push the changes & create a pull request*  
 
