@@ -3,23 +3,6 @@ import streamlit as st
 # Set page title and fav icon
 st.set_page_config(page_title="AI Rehman", page_icon="🤖", layout="wide")
 
-# Function to Set Background Image
-def set_background(image_file):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: url({image_file}) no-repeat center center fixed;
-            background-size: cover;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# Set Background Image
-set_background("logo/logo.jpg")  # Yahan apni image ka path do
-
 # Header
 st.title("✨ Welcome to AI-Rehman ✨")
 st.subheader("Hi, I am Abdul-Rehman. 👋")
@@ -41,9 +24,6 @@ if theme == "Dark Mode":
 # Navigation
 menu = ["Home", "About", "Services", "Contact", "E-Commerce", "Testimonials", "AI Chatbot"]
 choice = st.sidebar.selectbox("Navigate", menu)
-
-# Logo Image (Top Left Corner)
-st.image("logo/logo.jpg", width=150)
 
 if choice == "Home":
     st.write("### AI Rehman is a cutting-edge brand providing all stuff collections.")
@@ -96,7 +76,7 @@ elif choice == "Testimonials":
 
 # elif choice == "AI Chatbot":
 #     st.write("## AI Chatbot:")
-#     st.write("How can I assist you today?")  # Placeholder for chatbot implementation
+#     st.write("How can I assist you today?") 
 
 # Footer
 st.write("---")
