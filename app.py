@@ -1,4 +1,6 @@
 import streamlit as st
+import smtplib
+from email.message import EmailMessage
 
 # Set Page Configuration
 st.set_page_config(page_title="AI Rehman - Clothing Brand", page_icon="👕", layout="wide")
@@ -57,17 +59,34 @@ elif choice == "Contact":
     st.write("📧 **Email:** alrehmanfashions@gmail.com")
     st.write("📞 **Phone:** 03290505319")
 
-    # Contact Form
-    name = st.text_input("Your Name")
-    message = st.text_area("Your Message")
-    if st.button("📩 Send Message"):
-        st.success(f"Thank you, {name}! Your message has been sent successfully.")
-    # Check if name and message are not empty
+    st.title("📩 Contact Form")
+
+name = st.text_input("Your Name")
+message = st.text_area("Your Message")
+
+if st.button("📩 Send Message"):
     if name and message:
-        st.success(f"Thank you, {name}! Your message has been sent successfully. ✅")
+        # Email setup
+        sender_email = "your-email@gmail.com"
+        receiver_email = "your-email@gmail.com"
+        email_password = "your-email-password"
+
+        email = EmailMessage()
+        email["From"] = sender_email
+        email["To"] = receiver_email
+        email["Subject"] = f"New Contact Form Message from {name}"
+        email.set_content(f"Name: {name}\n\nMessage: {message}")
+
+        # Send email
+        try:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+                server.login(sender_email, email_password)
+                server.send_message(email)
+            st.success(f"Thank you, {name}! Your message has been sent via email. ✅")
+        except Exception as e:
+            st.error(f"Error sending email: {e}")
     else:
         st.error("⚠️ Please fill in both your name and message before sending.")
-
 
 # --- SHOP (E-COMMERCE) SECTION ---
 elif choice == "Shop":
