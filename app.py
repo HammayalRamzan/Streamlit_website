@@ -27,7 +27,7 @@ choice = st.sidebar.selectbox("📍 Navigate", menu)
 
 # --- HOME SECTION ---
 if choice == "Home":
-    #st.image("https://via.placeholder.com/800x300?text=AI+Rehman+Fashion", use_column_width=True)
+    st.image("https://via.placeholder.com/800x300?text=AI+Rehman+Fashion", use_column_width=True)
     st.write("### Discover the finest collection of Pakistani fashion, where tradition meets modern elegance.")
     st.write("🚀 We bring you high-quality, exclusive designs tailored for every occasion.")
     st.button("🔍 Explore More")
