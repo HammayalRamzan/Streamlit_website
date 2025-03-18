@@ -62,6 +62,12 @@ elif choice == "Contact":
     message = st.text_area("Your Message")
     if st.button("📩 Send Message"):
         st.success(f"Thank you, {name}! Your message has been sent successfully.")
+    # Check if name and message are not empty
+    if name and message:
+        st.success(f"Thank you, {name}! Your message has been sent successfully. ✅")
+    else:
+        st.error("⚠️ Please fill in both your name and message before sending.")
+
 
 # --- SHOP (E-COMMERCE) SECTION ---
 elif choice == "Shop":
