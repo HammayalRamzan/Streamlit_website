@@ -1,6 +1,4 @@
 import streamlit as st
-import smtplib
-from email.message import EmailMessage
 
 # Set Page Configuration
 st.set_page_config(page_title="AI Rehman - Clothing Brand", page_icon="👕", layout="wide")
