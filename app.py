@@ -1,19 +1,15 @@
 import streamlit as st
 
-# Set page title and fav icon
-st.set_page_config(page_title="AI Rehman", page_icon="🤖", layout="wide")
+# Set Page Configuration
+st.set_page_config(page_title="AI Rehman - Clothing Brand", page_icon="👕", layout="wide")
 
-# Header
-st.title("✨ Welcome to AI-Rehman ✨")
-st.subheader("Hi, I am Abdul-Rehman. 👋")
-
-# Dark/Light Mode Toggle
-theme = st.sidebar.selectbox("Select Theme", ["Light Mode", "Dark Mode"])
+# --- DARK/LIGHT MODE TOGGLE ---
+theme = st.sidebar.radio("🌗 Choose Theme:", ["Light Mode", "Dark Mode"])
 if theme == "Dark Mode":
     st.markdown(
         """
         <style>
-        .stApp {
+        body {
             background-color: #2c2c2c;
             color: white;
         }
@@ -21,66 +17,70 @@ if theme == "Dark Mode":
         """, unsafe_allow_html=True
     )
 
-# Navigation
-menu = ["Home", "About", "Services", "Contact", "E-Commerce", "Testimonials", "AI Chatbot"]
-choice = st.sidebar.selectbox("Navigate", menu)
+# --- HEADER ---
+st.title("✨ Welcome to AI-Rehman Fashion ✨")
+st.subheader("👋 Hi, I am Abdul-Rehman, the creative mind behind this brand.")
 
+# --- NAVIGATION MENU ---
+menu = ["Home", "About Us", "Services", "Contact", "Shop", "Testimonials"]
+choice = st.sidebar.selectbox("📍 Navigate", menu)
+
+# --- HOME SECTION ---
 if choice == "Home":
-    st.write("### AI Rehman is a cutting-edge brand providing all stuff collections.")
-    st.write("""🚀 Welcome to **AI-Rehman**, where Pakistani craftsmanship meets modern fashion.  
-    We bring you exclusive, high-quality designs that celebrate elegance, culture,  
-    and contemporary trends. Whether it's timeless traditional wear or chic modern  
-    outfits, our collection is designed to make you stand out.  
-""")
-    st.button("Learn More")
+    #st.image("https://via.placeholder.com/800x300?text=AI+Rehman+Fashion", use_column_width=True)
+    st.write("### Discover the finest collection of Pakistani fashion, where tradition meets modern elegance.")
+    st.write("🚀 We bring you high-quality, exclusive designs tailored for every occasion.")
+    st.button("🔍 Explore More")
 
-elif choice == "About":
-    st.write("## About Me:")
-    st.write("- Experience the artistry of Pakistan’s finest designer fashion.")
-    st.write("- AI-Rehman, A Visionary Pakistani Designer Brand")
-    st.write("""Welcome to AI-Rehman Brand, where style meets craftsmanship. 
-    As a passionate clothing brand owner, I am dedicated to creating high-quality, 
-    fashionable attire that empowers individuals to express their unique style. 
-    Join us on this journey to redefine fashion with elegance and innovation.""")
+# --- ABOUT US SECTION ---
+elif choice == "About Us":
+    st.write("## 🏆 About AI-Rehman Fashion")
+    st.write("Welcome to AI-Rehman, where we redefine fashion with elegance and innovation.")
+    st.write("- 🎨 Inspired by **Pakistani traditions** with a modern touch.")
+    st.write("- 🧵 **Premium quality** fabric and expert craftsmanship.")
+    st.write("- 🏅 Trusted by customers nationwide.")
+    st.success("Our mission is to deliver **luxury fashion** that makes you stand out!")
 
+# --- SERVICES SECTION ---
 elif choice == "Services":
-    st.write("## Services We Offer:")
-    st.write("- 👗 Ladies' & Gents' Tailoring ✂️ – Perfectly stitched suits for every occasion.")
-    st.write("- 🧵 Unstitched Fabric 👕 – Premium collection for your custom designs.")
-    st.write("- 👖 Alterations & Fitting Services 🔧 – Tailored adjustments for the perfect fit.")
-    st.write("- Personalized Style Consultation 💬 – Expert advice to enhance your wardrobe.")
+    st.write("## 🛠️ Our Services")
+    st.write("### 👗 Tailoring & Custom Stitching")
+    st.write("✅ Ladies' & Gents' Suits Tailoring")
+    st.write("✅ Unstitched Fabric for Custom Designs")
+    st.write("✅ Alterations & Fitting Adjustments")
+    st.write("✅ Personalized Style Consultation")
 
+# --- CONTACT SECTION ---
 elif choice == "Contact":
-    st.write("## Contact Us:")
-    st.write("📧 Email: alrehmanfashions@gmail.com")
-    st.write("📍 Location: Lahore, Pakistan")
-    st.write("📞 Phone: 03290505319")
-    st.text_input("Your Name")
-    st.text_area("Your Message")
-    if st.button("Send Message"):
-        st.success("Your message has been sent successfully!")
+    st.write("## 📞 Contact Us")
+    st.write("📍 **Location:** Lahore, Pakistan")
+    st.write("📧 **Email:** alrehmanfashions@gmail.com")
+    st.write("📞 **Phone:** 03290505319")
 
-elif choice == "E-Commerce":
-    st.write("## Shop Our Collection:")
-    st.write("### Featured Products")
-    st.write("1. **Traditional Sherwani** - PKR 10,000")
-    st.write("2. **Chic Modern Dress** - PKR 7,500")
-    st.write("3. **Formal Suit** - PKR 15,000")
-    st.write("### Add to Cart Functionality Coming Soon!")  # Placeholder for future functionality
+    # Contact Form
+    name = st.text_input("Your Name")
+    message = st.text_area("Your Message")
+    if st.button("📩 Send Message"):
+        st.success(f"Thank you, {name}! Your message has been sent successfully.")
 
+# --- SHOP (E-COMMERCE) SECTION ---
+elif choice == "Shop":
+    st.write("## 🛍️ Shop Our Collection")
+    st.write("### 🏷️ Featured Products:")
+    st.write("1️⃣ **Traditional Sherwani** - PKR 10,000")
+    st.write("2️⃣ **Chic Modern Dress** - PKR 7,500")
+    st.write("3️⃣ **Formal Suit** - PKR 15,000")
+    st.warning("🛒 Add-to-cart feature coming soon!")
+
+# --- TESTIMONIALS SECTION ---
 elif choice == "Testimonials":
-    st.write("## Customer Reviews:")
-    st.write("⭐️⭐️⭐️⭐️⭐️ - 'Amazing quality and craftsmanship!'")
-    st.write("⭐️⭐️⭐️⭐️ - 'Loved my outfit from AI-Rehman!'")
-    st.write("⭐️⭐️⭐️⭐️⭐️ - 'The best tailoring service in Lahore!'")
-
-# elif choice == "AI Chatbot":
-#     st.write("## AI Chatbot:")
-#     st.write("How can I assist you today?") 
-
-# Footer
+    st.write("## ⭐ Customer Reviews")
+    st.write("🌟🌟🌟🌟🌟 - 'Amazing quality and craftsmanship!'")
+    st.write("🌟🌟🌟🌟 - 'Loved my outfit from AI-Rehman!'")
+    st.write("🌟🌟🌟🌟🌟 - 'Best tailoring service in Lahore!'")
+    
+# --- FOOTER ---
 st.write("---")
-st.write("Thanks for visiting AI Rehman! ❣ ")
-st.write("---")
+st.write("👕 Thank you for visiting **AI Rehman Fashion**! We appreciate your support. ❤️")
 st.write("© 2025 AI Rehman. All rights reserved.")
 st.balloons()
