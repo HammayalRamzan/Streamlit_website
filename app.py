@@ -27,7 +27,7 @@ choice = st.sidebar.selectbox("📍 Navigate", menu)
 
 # --- HOME SECTION ---
 if choice == "Home":
-    st.image("https://www.google.com/search?q=AR+fashion+logo&sca_esv=a9a17715c624a2d7&rlz=1C1MMCH_enPK1120PK1120&udm=2&sxsrf=AHTn8zpWm3N9DXLQB36P8FupFZreFTVzSw%3A1742279118177&ei=zhHZZ_LECvyN9u8PjJmNqAI&ved=0ahUKEwjy48C__5KMAxX8hv0HHYxMAyUQ4dUDCBE&uact=5&oq=AR+fashion+logo&gs_lp=EgNpbWciD0FSIGZhc2hpb24gbG9nbzIKEAAYgAQYQxiKBTIFEAAYgAQyBBAAGB4yBhAAGAgYHkitIlCYBViOF3ABeACQAQCYAd4BoAHcBqoBAzItNLgBA8gBAPgBAZgCBaACqQfCAgcQIxgnGMkCwgIGEAAYBxgewgIIEAAYBxgIGB6YAwCIBgGSBwUxLjAuNKAH1w-yBwMyLTS4B6MH&sclient=img#vhid=YhzHfh3GKrOTFM&vssid=mosaic")
+    st.image("./logo.jpg")
     st.write("### Discover the finest collection of Pakistani fashion, where tradition meets modern elegance.")
     st.write("🚀 We bring you high-quality, exclusive designs tailored for every occasion.")
     st.button("🔍 Explore More")
